@@ -5,15 +5,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.willcocks.callum.model.data.Selection;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@JsonPropertyOrder(value = {"selection", "pdf_document"})
+@JsonPropertyOrder(value = {"pdfBase64", "selection"})
 public class PDFExtractionRequest implements Serializable {
-    @JsonProperty("pdf_document")
-    private String pdfDocument;
+    @JsonProperty("pdfBase64")
+    private String pdfBase64Document;
     private Map<Integer, List<Selection>> selection = new HashMap<>();
 
     private String callbackURL;
@@ -22,11 +21,11 @@ public class PDFExtractionRequest implements Serializable {
     }
 
     public String getPdfBase64Document() {
-        return pdfDocument;
+        return pdfBase64Document;
     }
 
-    public void setPdfDocument(String pdfDocument) {
-        this.pdfDocument = pdfDocument;
+    public void setPdfBase64Document(String pdfBase64Document) {
+        this.pdfBase64Document = pdfBase64Document;
     }
 
     public Map<Integer, List<Selection>> getSelection() {
