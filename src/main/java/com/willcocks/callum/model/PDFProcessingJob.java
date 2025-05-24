@@ -1,5 +1,6 @@
 package com.willcocks.callum.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.UUID;
@@ -8,7 +9,11 @@ import java.util.UUID;
 public class PDFProcessingJob extends PDFExtractionRequest{
     private UUID documentUUID = UUID.randomUUID();
     private UUID selectionUUID = UUID.randomUUID();
+
+    @JsonProperty("callbackURL")
     private String callbackURL;
+
+    @JsonProperty("callbackService")
     private String callbackService;
     public PDFProcessingJob() {
     }

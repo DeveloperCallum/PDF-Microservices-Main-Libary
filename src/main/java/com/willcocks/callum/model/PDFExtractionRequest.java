@@ -15,8 +15,6 @@ public class PDFExtractionRequest implements Serializable {
     private String pdfBase64Document;
     private Map<Integer, List<Selection>> selection = new HashMap<>();
 
-    private String callbackURL;
-
     public PDFExtractionRequest() {
     }
 
@@ -34,9 +32,5 @@ public class PDFExtractionRequest implements Serializable {
 
     public void setSelection(Map<Integer, List<Selection>> selection) {
         this.selection = selection;
-    }
-
-    public PDFExtractionRequest(String callbackURL) {
-        this.callbackURL = callbackURL;
     }
 }
