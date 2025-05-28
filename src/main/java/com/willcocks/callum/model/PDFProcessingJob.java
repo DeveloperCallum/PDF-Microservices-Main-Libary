@@ -9,7 +9,6 @@ import java.util.UUID;
 public class PDFProcessingJob extends PDFExtractionRequest{
     private UUID documentUUID = UUID.randomUUID();
     private UUID selectionUUID = UUID.randomUUID();
-
     @JsonProperty("callbackURL")
     private String callbackURL;
 
