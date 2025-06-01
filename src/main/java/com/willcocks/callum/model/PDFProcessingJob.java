@@ -7,13 +7,16 @@ import java.util.UUID;
 
 @JsonPropertyOrder(value = {"documentUUID", "pdfBase64", "selection"})
 public class PDFProcessingJob extends PDFExtractionRequest{
-    private UUID documentUUID = UUID.randomUUID();
+
+    //Should not be null.
+    private UUID documentUUID;
     private UUID selectionUUID = UUID.randomUUID();
     @JsonProperty("callbackURL")
     private String callbackURL;
 
     @JsonProperty("callbackService")
     private String callbackService;
+
     public PDFProcessingJob() {
     }
 
