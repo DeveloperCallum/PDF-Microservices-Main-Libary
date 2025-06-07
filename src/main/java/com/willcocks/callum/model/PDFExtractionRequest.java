@@ -12,18 +12,18 @@ import java.util.Map;
 @JsonPropertyOrder(value = {"pdfBase64", "selection"})
 public class PDFExtractionRequest implements Serializable {
     @JsonProperty("pdfBase64")
-    private String pdfBase64Document;
+    private String base64Document;
     private Map<Integer, List<Selection>> selection = new HashMap<>();
 
     public PDFExtractionRequest() {
     }
 
-    public String getPdfBase64Document() {
-        return pdfBase64Document;
+    public String getBase64Document() {
+        return base64Document;
     }
 
-    public void setPdfBase64Document(String pdfBase64Document) {
-        this.pdfBase64Document = pdfBase64Document;
+    public void setBase64Document(String base64Document) {
+        this.base64Document = base64Document;
     }
 
     public Map<Integer, List<Selection>> getSelection() {
