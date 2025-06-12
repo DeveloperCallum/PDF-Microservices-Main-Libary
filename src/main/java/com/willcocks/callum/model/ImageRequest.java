@@ -1,7 +1,5 @@
 package com.willcocks.callum.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -10,7 +8,7 @@ import java.util.UUID;
  */
 public class ImageRequest implements Serializable {
     private UUID documentUUID;
-    private String Base64Document;
+    private String base64Document;
 
     private String callbackURL;
 
@@ -28,10 +26,26 @@ public class ImageRequest implements Serializable {
     }
 
     public String getBase64Document() {
-        return Base64Document;
+        return base64Document;
     }
 
     public void setBase64Document(String base64Document) {
-        Base64Document = base64Document;
+        this.base64Document = base64Document;
+    }
+
+    public String getCallbackURL() {
+        return callbackURL;
+    }
+
+    public void setCallbackURL(String callbackURL) {
+        this.callbackURL = callbackURL;
+    }
+
+    public String getCallbackService() {
+        return callbackService;
+    }
+
+    public void setCallbackService(String callbackService) {
+        this.callbackService = callbackService;
     }
 }
