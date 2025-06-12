@@ -50,7 +50,8 @@ public class SendWebhookToService<T> implements Consumer<T>, Serializable {
 
         System.out.println("Status Code: " + response.getStatusCode());
 
-        if (response.getStatusCode() != HttpStatusCode.valueOf(202)) {
+        int statusCode = response.getStatusCode().value();
+        if (statusCode < 200 || statusCode >= 300 ) {
             System.out.println("Issue sending callback!");
             //TODO? Event?
             throw new IllegalStateException("sent HTTP request to server, server responded with an error.");
