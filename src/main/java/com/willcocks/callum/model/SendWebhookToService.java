@@ -11,12 +11,12 @@ import org.springframework.web.client.RestClient;
 import java.io.Serializable;
 import java.util.function.Consumer;
 
-public class WebhookCallback<T> implements Consumer<T>, Serializable {
+public class SendWebhookToService<T> implements Consumer<T>, Serializable {
     private String serviceName;
     private String callbackURL;
     private final DiscoveryClient discoveryClient;
 
-    public WebhookCallback(String serviceName, String callbackURL, DiscoveryClient discoveryClient) {
+    public SendWebhookToService(String serviceName, String callbackURL, DiscoveryClient discoveryClient) {
         this.serviceName = serviceName;
         this.callbackURL = callbackURL;
         this.discoveryClient = discoveryClient;
